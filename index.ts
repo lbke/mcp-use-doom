@@ -44,6 +44,20 @@ const showAppOutputSchema = z.object({
   message: z.string().describe("Message to display in the MCP App"),
 });
 
+const DOOM_WIDGET_CONNECT_DOMAINS = [
+  "http://127.0.0.1:3000",
+  "http://localhost:3000",
+  "ws://127.0.0.1:3000",
+  "ws://localhost:3000",
+];
+
+const DOOM_WIDGET_RESOURCE_DOMAINS = [
+  "http://127.0.0.1:3000",
+  "http://localhost:3000",
+  "https://fonts.googleapis.com",
+  "https://fonts.gstatic.com",
+];
+
 export const showApp = server.tool(
   {
     name: "doom-iframe", // Unique tool id on the wire.
@@ -96,12 +110,8 @@ export const doomCSS = server.tool(
       description: "Doom CSS",
       prefersBorder: false, // ask the host to skip a card border around the view
       csp: {
-        resourceDomains: [
-          "http://127.0.0.1:3000",
-          "http://localhost:3000",
-          "https://fonts.googleapis.com",
-          "https://fonts.gstatic.com",
-        ]
+        connectDomains: DOOM_WIDGET_CONNECT_DOMAINS,
+        resourceDomains: DOOM_WIDGET_RESOURCE_DOMAINS,
       },
     },
     // Behavioral hints for clients (readOnly / destructive / open-world).
@@ -134,12 +144,8 @@ export const doomWasm = server.tool(
       description: "Doom WASM",
       prefersBorder: false, // ask the host to skip a card border around the view
       csp: {
-        resourceDomains: [
-          "http://127.0.0.1:3000",
-          "http://localhost:3000",
-          "https://fonts.googleapis.com",
-          "https://fonts.gstatic.com",
-        ]
+        connectDomains: DOOM_WIDGET_CONNECT_DOMAINS,
+        resourceDomains: DOOM_WIDGET_RESOURCE_DOMAINS,
       },
     },
     // Behavioral hints for clients (readOnly / destructive / open-world).
