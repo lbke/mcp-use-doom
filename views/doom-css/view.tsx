@@ -1,3 +1,10 @@
+// Clone https://github.com/NielsLeenheer/cssDOOM
+// Build the app
+// Copy HTML here + adapt for React (class -> className, close img, point "assets/" to "/mcp/_mcp-use/public/assets")
+// Copy assets in /public and add script/link to load css and js
+// Copy maps in /public (used by the JS code)
+// replace /assets with /mcp/_mcp-use/public/mcp/_mcp-use/public/assets
+
 /** MCP App starter view — edit this file to build your UI. */
 import {
   Image,
@@ -67,15 +74,16 @@ export default function McpApp() {
     }
   });
 
-  // Clone https://github.com/NielsLeenheer/cssDOOM
-  // Build the app
-  // Copy HTML here + adapt for React (class -> className, close img, point "assets/" to "/assets")
-  // Copy assets in /public and add script/link to load css and js
-  // Copy maps in /public (used by the JS code)
   return (
     <div>
-      <script type="module" src="/assets/index-D353JIYS.js"></script>
-      <link rel="stylesheet" href="/assets/index-BvGB871g.css"></link>
+      <script
+        type="module"
+        src="/mcp/_mcp-use/public/assets/index-D353JIYS.js"
+      ></script>
+      <link
+        rel="stylesheet"
+        href="/mcp/_mcp-use/public/assets/index-BvGB871g.css"
+      ></link>
       <svg width="0" height="0" aria-hidden="true">
         {/* Doom "fuzz" effect for Spectre — displaces pixels using animated noise */}
         <filter id="fuzz" x="-10%" y="-10%" width="120%" height="120%">
@@ -241,55 +249,64 @@ export default function McpApp() {
           <div className="spectator-stack">
             <div className="spectator-group" id="spectator-rotate">
               <button data-key="q" title="Rotate Left">
-                <img src="/assets/icons/rotate-left.svg" alt="" />
+                <img
+                  src="/mcp/_mcp-use/public/assets/icons/rotate-left.svg"
+                  alt=""
+                />
               </button>
               <button data-key="e" title="Rotate Right">
-                <img src="/assets/icons/rotate-right.svg" alt="" />
+                <img
+                  src="/mcp/_mcp-use/public/assets/icons/rotate-right.svg"
+                  alt=""
+                />
               </button>
             </div>
             <div className="spectator-group" id="spectator-zoom">
               <button data-key="r" title="Zoom In">
-                <img src="/assets/icons/plus.svg" alt="" />
+                <img src="/mcp/_mcp-use/public/assets/icons/plus.svg" alt="" />
               </button>
               <button data-key="f" title="Zoom Out">
-                <img src="/assets/icons/minus.svg" alt="" />
+                <img src="/mcp/_mcp-use/public/assets/icons/minus.svg" alt="" />
               </button>
             </div>
           </div>
           <div className="spectator-group" id="spectator-arrows">
             <button data-key="w" title="Pan Forward">
-              <img src="/assets/icons/up.svg" alt="" />
+              <img src="/mcp/_mcp-use/public/assets/icons/up.svg" alt="" />
             </button>
             <button data-key="a" title="Pan Left">
-              <img src="/assets/icons/left.svg" alt="" />
+              <img src="/mcp/_mcp-use/public/assets/icons/left.svg" alt="" />
             </button>
             <button data-key="s" title="Pan Backward">
-              <img src="/assets/icons/down.svg" alt="" />
+              <img src="/mcp/_mcp-use/public/assets/icons/down.svg" alt="" />
             </button>
             <button data-key="d" title="Pan Right">
-              <img src="/assets/icons/right.svg" alt="" />
+              <img src="/mcp/_mcp-use/public/assets/icons/right.svg" alt="" />
             </button>
           </div>
           <div className="spectator-group" id="spectator-tabs">
             <button className="spectator-tab active" data-mode="top">
-              <img src="/assets/icons/map.svg" alt="Map" />
+              <img src="/mcp/_mcp-use/public/assets/icons/map.svg" alt="Map" />
             </button>
             <button className="spectator-tab" data-mode="follow">
-              <img src="/assets/icons/follow.svg" alt="Follow" />
+              <img
+                src="/mcp/_mcp-use/public/assets/icons/follow.svg"
+                alt="Follow"
+              />
             </button>
           </div>
         </div>
         <button id="spectator-button" aria-label="Spectator">
-          <img src="/assets/icons/binoculars.svg" alt="" />
+          <img src="/mcp/_mcp-use/public/assets/icons/binoculars.svg" alt="" />
         </button>
         <div id="aim-line"></div>
       </div>
       {/* Help overlay */}
       <button id="fullscreen-button" aria-label="Fullscreen">
-        <img src="/assets/icons/fullscreen.svg" alt="" />
+        <img src="/mcp/_mcp-use/public/assets/icons/fullscreen.svg" alt="" />
       </button>
       <button id="help-button" aria-label="Help">
-        <img src="/assets/icons/help.svg" alt="" />
+        <img src="/mcp/_mcp-use/public/assets/icons/help.svg" alt="" />
       </button>
       <div id="help-overlay" hidden>
         <div id="help-content">
@@ -380,7 +397,7 @@ export default function McpApp() {
                 <div className="menu-heading">Level</div>
                 <img
                   className="menu-episode"
-                  src="/assets/menu/M_EPI1.png"
+                  src="/mcp/_mcp-use/public/assets/menu/M_EPI1.png"
                   alt="Knee-Deep in the Dead"
                 />
                 <div className="menu-level-list"></div>
@@ -389,24 +406,33 @@ export default function McpApp() {
                 <div className="menu-heading">Skill</div>
                 <button className="menu-skill" data-skill="1">
                   <img
-                    src="/assets/menu/M_JKILL.png"
+                    src="/mcp/_mcp-use/public/assets/menu/M_JKILL.png"
                     alt="I'm too young to die"
                   />
                 </button>
                 <button className="menu-skill" data-skill="2">
                   <img
-                    src="/assets/menu/M_ROUGH.png"
+                    src="/mcp/_mcp-use/public/assets/menu/M_ROUGH.png"
                     alt="Hey, not too rough"
                   />
                 </button>
                 <button className="menu-skill" data-skill="3">
-                  <img src="/assets/menu/M_HURT.png" alt="Hurt me plenty" />
+                  <img
+                    src="/mcp/_mcp-use/public/assets/menu/M_HURT.png"
+                    alt="Hurt me plenty"
+                  />
                 </button>
                 <button className="menu-skill" data-skill="4">
-                  <img src="/assets/menu/M_ULTRA.png" alt="Ultra-Violence" />
+                  <img
+                    src="/mcp/_mcp-use/public/assets/menu/M_ULTRA.png"
+                    alt="Ultra-Violence"
+                  />
                 </button>
                 <button className="menu-skill" data-skill="5">
-                  <img src="/assets/menu/M_NMARE.png" alt="Nightmare!" />
+                  <img
+                    src="/mcp/_mcp-use/public/assets/menu/M_NMARE.png"
+                    alt="Nightmare!"
+                  />
                 </button>
               </div>
             </div>

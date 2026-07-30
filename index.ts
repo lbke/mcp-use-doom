@@ -113,7 +113,7 @@ export const doomCSS = server.tool(
   },
   async ({ }, ctx) => {
     // Brief delay so the pending skeleton is visible during dev/inspector demos.
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    await new Promise((resolve) => setTimeout(resolve, 5000));
 
     return {
       content: [{ type: "text", text: "Starting doom in CSS" }],
