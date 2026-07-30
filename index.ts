@@ -122,35 +122,43 @@ export const doomCSS = server.tool(
   }
 );
 
-// say-hello — plain tool (no view); used by the Say Hello button in my-view
-const sayHelloInputSchema = z.object({
-  name: z.string().describe("Name to greet"),
-});
-
-const sayHelloOutputSchema = z.object({
-  greeting: z.string().describe("Greeting to display"),
-});
-
-export const sayHello = server.tool(
+export const doomWasm = server.tool(
   {
-    name: "say-hello",
-    title: "Say hello",
-    description: "Returns a greeting for the Say Hello button demo",
-    inputSchema: sayHelloInputSchema,
-    outputSchema: sayHelloOutputSchema,
+    name: "doom-wasm", // Unique tool id on the wire.
+    title: "Doom implemented in WASM", // Short label in inspector and client UIs (falls back to name).
+    description: "Display Doom game, using doom-wasm open source implementation (https://github.com/cloudflare/doom-wasm).", // LLM-facing summary of what the tool does.
+    inputSchema: z.object({}), // Validated before the handler runs; .describe() text becomes LLM hints.
+    outputSchema: z.object({}), // Required when binding a view — the view reads structuredContent typed by this.
+    view: {
+      name: "doom-wasm", // directory under views/
+      description: "Doom WASM",
+      prefersBorder: false, // ask the host to skip a card border around the view
+      csp: {
+        resourceDomains: [
+          "http://127.0.0.1:3000",
+          "http://localhost:3000",
+          "https://fonts.googleapis.com",
+          "https://fonts.gstatic.com",
+        ]
+      },
+    },
+    // Behavioral hints for clients (readOnly / destructive / open-world).
     annotations: {
       readOnlyHint: true,
       destructiveHint: false,
       openWorldHint: false,
     },
   },
-  async ({ name }) => {
-    const data = { greeting: `Hello, ${name}!` };
+  async ({ }, ctx) => {
+    // Brief delay so the pending skeleton is visible during dev/inspector demos.
+    await new Promise((resolve) => setTimeout(resolve, 5000));
+
     return {
-      content: [{ type: "text", text: data.greeting }],
-      structuredContent: data,
+      content: [{ type: "text", text: "Starting doom WASM" }],
+      structuredContent: {},
     };
   }
 );
+
 
 export default server;

@@ -42,3 +42,6 @@ Thumbs.db
 *.swo
 *~
 
+
+# It's a shareware, do not include
+**/doom1.wad

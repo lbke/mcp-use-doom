@@ -19,18 +19,9 @@ import {
   useViewTheme,
   useViewTool,
 } from "mcp-use/react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { z } from "zod";
 
-import {
-  ExpandIcon,
-  ExternalLinkIcon,
-  MonitorIcon,
-  MoonIcon,
-  PipIcon,
-  SmartphoneIcon,
-  SunIcon,
-} from "./icons.js";
 import "./view.css";
 
 export default function McpApp() {
@@ -48,34 +39,62 @@ export default function McpApp() {
   const sendFollowUp = useSendFollowUp();
 
   useEffect(() => {
-    if (document) {
-      //@ts-ignore
-      document
-        .getElementById("fullscreen-button")
-        .addEventListener("click", () => {
-          if (document.fullscreenElement) {
-            document.exitFullscreen();
-          } else {
-            document.documentElement.requestFullscreen();
-          }
-        });
-      //@ts-ignore
-      document.getElementById("help-button").addEventListener("click", () => {
-        //@ts-ignore
-        document.getElementById("help-overlay").hidden = false;
-      });
-      //@ts-ignore
-      document.getElementById("help-overlay").addEventListener("click", () => {
-        //@ts-ignore
-        document.getElementById("help-overlay").hidden = true;
-      });
-    } else {
-      console.error("No document");
+    // @ts-ignore
+    console.log(
+      "assets URL",
+      // @ts-ignore
+      window.__mcpPublicUrl,
+      // @ts-ignore
+      window.__mcpPublicAssetsUrl,
+    );
+    const fullscreenButton = document.getElementById("fullscreen-button");
+    const helpButton = document.getElementById("help-button");
+    const helpOverlay = document.getElementById("help-overlay");
+
+    if (!fullscreenButton || !helpButton || !helpOverlay) {
+      return;
     }
-  });
+
+    const toggleFullscreen = async () => {
+      try {
+        if (document.fullscreenElement) {
+          await document.exitFullscreen();
+        } else {
+          await document.documentElement.requestFullscreen();
+        }
+      } catch (error) {
+        if (
+          error instanceof DOMException &&
+          (error.name === "AbortError" || error.name === "NotAllowedError")
+        ) {
+          return;
+        }
+
+        console.error("Fullscreen request failed", error);
+      }
+    };
+
+    const showHelp = () => {
+      helpOverlay.hidden = false;
+    };
+
+    const hideHelp = () => {
+      helpOverlay.hidden = true;
+    };
+
+    fullscreenButton.addEventListener("click", toggleFullscreen);
+    helpButton.addEventListener("click", showHelp);
+    helpOverlay.addEventListener("click", hideHelp);
+
+    return () => {
+      fullscreenButton.removeEventListener("click", toggleFullscreen);
+      helpButton.removeEventListener("click", showHelp);
+      helpOverlay.removeEventListener("click", hideHelp);
+    };
+  }, []);
 
   return (
-    <div>
+    <div className="doom-app-shell">
       <script
         type="module"
         src="/mcp/_mcp-use/public/assets/index-D353JIYS.js"
@@ -162,11 +181,15 @@ export default function McpApp() {
           {/* Status bar */}
           <div id="status">
             <div className="hud-section" id="hud-ammo">
-              <output id="ammo" className="hud-number" value=" 50"></output>
+              <output id="ammo" className="hud-number">
+                {" 50"}
+              </output>
             </div>
             <div className="hud-section" id="hud-health">
               <div className="hud-pct">
-                <output id="health" className="hud-number" value="100"></output>
+                <output id="health" className="hud-number">
+                  100
+                </output>
               </div>
             </div>
             <div className="hud-section" id="hud-arms">
@@ -182,7 +205,9 @@ export default function McpApp() {
             </div>
             <div className="hud-section" id="hud-armor">
               <div className="hud-pct">
-                <output id="armor" className="hud-number" value="  0"></output>
+                <output id="armor" className="hud-number">
+                  {"  0"}
+                </output>
               </div>
             </div>
             <div className="hud-section" id="hud-keys">
