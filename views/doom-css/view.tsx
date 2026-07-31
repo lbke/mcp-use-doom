@@ -1,12 +1,6 @@
-// Clone https://github.com/NielsLeenheer/cssDOOM
-// Build the app
-// Copy HTML here + adapt for React (class -> className, close img, point "assets/" to "/mcp/_mcp-use/public/assets")
-// Copy assets in /public and add script/link to load css and js
-// Copy maps in /public (used by the JS code)
-// replace /assets with /mcp/_mcp-use/public/mcp/_mcp-use/public/assets
-
 /** MCP App starter view — edit this file to build your UI. */
 import {
+  getPublicBaseUrl,
   Image,
   ModelContext,
   ThemeProvider,
@@ -25,6 +19,9 @@ import { z } from "zod";
 import "./view.css";
 
 export default function McpApp() {
+  const publicBaseUrl = getPublicBaseUrl();
+  const assetUrl = (path: string) => `${publicBaseUrl}${path}`;
+
   // useToolContext — tool lifecycle (pending / error / result)
   const view = useToolContext<"doom-css">();
   // useHostContext — locale, timezone, platform, capabilities
@@ -39,14 +36,23 @@ export default function McpApp() {
   const sendFollowUp = useSendFollowUp();
 
   useEffect(() => {
-    // @ts-ignore
-    console.log(
-      "assets URL",
-      // @ts-ignore
-      window.__mcpPublicUrl,
-      // @ts-ignore
-      window.__mcpPublicAssetsUrl,
-    );
+    if (!publicBaseUrl) {
+      return;
+    }
+
+    (
+      window as Window & { __mcpDoomPublicBaseUrl?: string }
+    ).__mcpDoomPublicBaseUrl = publicBaseUrl;
+
+    const scriptId = "doom-css-runtime";
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.type = "module";
+      script.src = assetUrl("assets/index-D353JIYS.js");
+      document.body.appendChild(script);
+    }
+
     const fullscreenButton = document.getElementById("fullscreen-button");
     const helpButton = document.getElementById("help-button");
     const helpOverlay = document.getElementById("help-overlay");
@@ -91,17 +97,13 @@ export default function McpApp() {
       helpButton.removeEventListener("click", showHelp);
       helpOverlay.removeEventListener("click", hideHelp);
     };
-  }, []);
+  }, [publicBaseUrl]);
 
   return (
     <div className="doom-app-shell">
-      <script
-        type="module"
-        src="/mcp/_mcp-use/public/assets/index-D353JIYS.js"
-      ></script>
       <link
         rel="stylesheet"
-        href="/mcp/_mcp-use/public/assets/index-BvGB871g.css"
+        href={assetUrl("assets/index-BvGB871g.css")}
       ></link>
       <svg width="0" height="0" aria-hidden="true">
         {/* Doom "fuzz" effect for Spectre — displaces pixels using animated noise */}
@@ -275,63 +277,63 @@ export default function McpApp() {
             <div className="spectator-group" id="spectator-rotate">
               <button data-key="q" title="Rotate Left">
                 <img
-                  src="/mcp/_mcp-use/public/assets/icons/rotate-left.svg"
+                  src={assetUrl("assets/icons/rotate-left.svg")}
                   alt=""
                 />
               </button>
               <button data-key="e" title="Rotate Right">
                 <img
-                  src="/mcp/_mcp-use/public/assets/icons/rotate-right.svg"
+                  src={assetUrl("assets/icons/rotate-right.svg")}
                   alt=""
                 />
               </button>
             </div>
             <div className="spectator-group" id="spectator-zoom">
               <button data-key="r" title="Zoom In">
-                <img src="/mcp/_mcp-use/public/assets/icons/plus.svg" alt="" />
+                <img src={assetUrl("assets/icons/plus.svg")} alt="" />
               </button>
               <button data-key="f" title="Zoom Out">
-                <img src="/mcp/_mcp-use/public/assets/icons/minus.svg" alt="" />
+                <img src={assetUrl("assets/icons/minus.svg")} alt="" />
               </button>
             </div>
           </div>
           <div className="spectator-group" id="spectator-arrows">
             <button data-key="w" title="Pan Forward">
-              <img src="/mcp/_mcp-use/public/assets/icons/up.svg" alt="" />
+              <img src={assetUrl("assets/icons/up.svg")} alt="" />
             </button>
             <button data-key="a" title="Pan Left">
-              <img src="/mcp/_mcp-use/public/assets/icons/left.svg" alt="" />
+              <img src={assetUrl("assets/icons/left.svg")} alt="" />
             </button>
             <button data-key="s" title="Pan Backward">
-              <img src="/mcp/_mcp-use/public/assets/icons/down.svg" alt="" />
+              <img src={assetUrl("assets/icons/down.svg")} alt="" />
             </button>
             <button data-key="d" title="Pan Right">
-              <img src="/mcp/_mcp-use/public/assets/icons/right.svg" alt="" />
+              <img src={assetUrl("assets/icons/right.svg")} alt="" />
             </button>
           </div>
           <div className="spectator-group" id="spectator-tabs">
             <button className="spectator-tab active" data-mode="top">
-              <img src="/mcp/_mcp-use/public/assets/icons/map.svg" alt="Map" />
+              <img src={assetUrl("assets/icons/map.svg")} alt="Map" />
             </button>
             <button className="spectator-tab" data-mode="follow">
               <img
-                src="/mcp/_mcp-use/public/assets/icons/follow.svg"
+                src={assetUrl("assets/icons/follow.svg")}
                 alt="Follow"
               />
             </button>
           </div>
         </div>
         <button id="spectator-button" aria-label="Spectator">
-          <img src="/mcp/_mcp-use/public/assets/icons/binoculars.svg" alt="" />
+          <img src={assetUrl("assets/icons/binoculars.svg")} alt="" />
         </button>
         <div id="aim-line"></div>
       </div>
       {/* Help overlay */}
       <button id="fullscreen-button" aria-label="Fullscreen">
-        <img src="/mcp/_mcp-use/public/assets/icons/fullscreen.svg" alt="" />
+        <img src={assetUrl("assets/icons/fullscreen.svg")} alt="" />
       </button>
       <button id="help-button" aria-label="Help">
-        <img src="/mcp/_mcp-use/public/assets/icons/help.svg" alt="" />
+        <img src={assetUrl("assets/icons/help.svg")} alt="" />
       </button>
       <div id="help-overlay" hidden>
         <div id="help-content">
@@ -422,7 +424,7 @@ export default function McpApp() {
                 <div className="menu-heading">Level</div>
                 <img
                   className="menu-episode"
-                  src="/mcp/_mcp-use/public/assets/menu/M_EPI1.png"
+                  src={assetUrl("assets/menu/M_EPI1.png")}
                   alt="Knee-Deep in the Dead"
                 />
                 <div className="menu-level-list"></div>
@@ -431,31 +433,31 @@ export default function McpApp() {
                 <div className="menu-heading">Skill</div>
                 <button className="menu-skill" data-skill="1">
                   <img
-                    src="/mcp/_mcp-use/public/assets/menu/M_JKILL.png"
+                    src={assetUrl("assets/menu/M_JKILL.png")}
                     alt="I'm too young to die"
                   />
                 </button>
                 <button className="menu-skill" data-skill="2">
                   <img
-                    src="/mcp/_mcp-use/public/assets/menu/M_ROUGH.png"
+                    src={assetUrl("assets/menu/M_ROUGH.png")}
                     alt="Hey, not too rough"
                   />
                 </button>
                 <button className="menu-skill" data-skill="3">
                   <img
-                    src="/mcp/_mcp-use/public/assets/menu/M_HURT.png"
+                    src={assetUrl("assets/menu/M_HURT.png")}
                     alt="Hurt me plenty"
                   />
                 </button>
                 <button className="menu-skill" data-skill="4">
                   <img
-                    src="/mcp/_mcp-use/public/assets/menu/M_ULTRA.png"
+                    src={assetUrl("assets/menu/M_ULTRA.png")}
                     alt="Ultra-Violence"
                   />
                 </button>
                 <button className="menu-skill" data-skill="5">
                   <img
-                    src="/mcp/_mcp-use/public/assets/menu/M_NMARE.png"
+                    src={assetUrl("assets/menu/M_NMARE.png")}
                     alt="Nightmare!"
                   />
                 </button>
@@ -478,7 +480,6 @@ export default function McpApp() {
           </div>
         </div>
       </div>
-      <script></script>
     </div>
   );
 }

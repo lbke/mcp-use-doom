@@ -1,12 +1,6 @@
-// Clone https://github.com/NielsLeenheer/cssDOOM
-// Build the app
-// Copy HTML here + adapt for React (class -> className, close img, point "assets/" to "/mcp/_mcp-use/public/assets")
-// Copy assets in /public and add script/link to load css and js
-// Copy maps in /public (used by the JS code)
-// replace /assets with /mcp/_mcp-use/public/mcp/_mcp-use/public/assets
-
 /** MCP App starter view — edit this file to build your UI. */
 import {
+  getPublicBaseUrl,
   useDisplayMode,
   useHostContext,
   useOpenExternal,
@@ -19,6 +13,8 @@ import { useEffect } from "react";
 import "./view.css";
 
 export default function McpApp() {
+  const publicBaseUrl = getPublicBaseUrl();
+
   // useToolContext — tool lifecycle (pending / error / result)
   const view = useToolContext<"doom-wasm">();
   // useHostContext — locale, timezone, platform, capabilities
@@ -33,6 +29,10 @@ export default function McpApp() {
   const sendFollowUp = useSendFollowUp();
 
   useEffect(() => {
+    if (!publicBaseUrl) {
+      return;
+    }
+
     const canvas = document.getElementById(
       "canvas",
     ) as HTMLCanvasElement | null;
@@ -40,9 +40,7 @@ export default function McpApp() {
       return;
     }
 
-    const mcpPublicUrl =
-      (window as any).__mcpPublicUrl ?? "/mcp/_mcp-use/public";
-    const doomBaseUrl = `${mcpPublicUrl}/doom-wasm`;
+    const doomBaseUrl = `${publicBaseUrl}doom-wasm`;
     const commonArgs = [
       "-iwad",
       "doom1.wad",
@@ -117,7 +115,7 @@ export default function McpApp() {
     return () => {
       canvas.removeEventListener("webglcontextlost", onWebglContextLost);
     };
-  }, []);
+  }, [publicBaseUrl]);
 
   return (
     <>
