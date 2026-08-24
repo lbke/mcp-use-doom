@@ -1,6 +1,6 @@
 @font-face {
   font-family: PressStart2P;
-  src: url(/mcp/_mcp-use/public/assets/fonts/PressStart2P-Regular.ttf)
+  src: url(./fonts/PressStart2P-Regular.ttf)
     format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -37,7 +37,7 @@ body {
   z-index: 10000;
   pointer-events: none;
   opacity: 0;
-  background: #000 url(/mcp/_mcp-use/public/assets/menu/M_DOOM.png) 50%/328px
+  background: #000 url(./menu/M_DOOM.png) 50%/328px
     160px no-repeat;
   transition: opacity 0.6s ease-out;
   position: fixed;
@@ -95,7 +95,7 @@ body {
   initial-value: 1;
 }
 #viewport {
-  background: url(/mcp/_mcp-use/public/assets/textures/SKY1.png) 0 0 / auto 70%
+  background: url(./textures/SKY1.png) 0 0 / auto 70%
     repeat-x;
   background-position-x: calc(var(--player-angle) * 163px), 0;
   image-rendering: pixelated;
@@ -207,15 +207,15 @@ body.show-sector-ids .floor:after {
 @keyframes nukage {
   0%,
   33% {
-    background-image: url(/mcp/_mcp-use/public/assets/flats/NUKAGE1.png);
+    background-image: url(./flats/NUKAGE1.png);
   }
   33%,
   66% {
-    background-image: url(/mcp/_mcp-use/public/assets/flats/NUKAGE2.png);
+    background-image: url(./flats/NUKAGE2.png);
   }
   66%,
   to {
-    background-image: url(/mcp/_mcp-use/public/assets/flats/NUKAGE3.png);
+    background-image: url(./flats/NUKAGE3.png);
   }
 }
 body.animated-flats .floor[data-texture^="NUKAGE"] {
@@ -613,61 +613,61 @@ body.css-frustum-culling .decoration {
   opacity: 1;
 }
 .switch[data-texture="SW1BRCOM"]:after {
-  background-image: url(/mcp/_mcp-use/public/assets/textures/SW2BRCOM.png);
+  background-image: url(./textures/SW2BRCOM.png);
 }
 .switch[data-texture="SW1BRN1"]:after {
-  background-image: url(/mcp/_mcp-use/public/assets/textures/SW2BRN1.png);
+  background-image: url(./textures/SW2BRN1.png);
 }
 .switch[data-texture="SW1BRN2"]:after {
-  background-image: url(/mcp/_mcp-use/public/assets/textures/SW2BRN2.png);
+  background-image: url(./textures/SW2BRN2.png);
 }
 .switch[data-texture="SW1BRNGN"]:after {
-  background-image: url(/mcp/_mcp-use/public/assets/textures/SW2BRNGN.png);
+  background-image: url(./textures/SW2BRNGN.png);
 }
 .switch[data-texture="SW1BROWN"]:after {
-  background-image: url(/mcp/_mcp-use/public/assets/textures/SW2BROWN.png);
+  background-image: url(./textures/SW2BROWN.png);
 }
 .switch[data-texture="SW1COMM"]:after {
-  background-image: url(/mcp/_mcp-use/public/assets/textures/SW2COMM.png);
+  background-image: url(./textures/SW2COMM.png);
 }
 .switch[data-texture="SW1COMP"]:after {
-  background-image: url(/mcp/_mcp-use/public/assets/textures/SW2COMP.png);
+  background-image: url(./textures/SW2COMP.png);
 }
 .switch[data-texture="SW1DIRT"]:after {
-  background-image: url(/mcp/_mcp-use/public/assets/textures/SW2DIRT.png);
+  background-image: url(./textures/SW2DIRT.png);
 }
 .switch[data-texture="SW1EXIT"]:after {
-  background-image: url(/mcp/_mcp-use/public/assets/textures/SW2EXIT.png);
+  background-image: url(./textures/SW2EXIT.png);
 }
 .switch[data-texture="SW1GRAY"]:after {
-  background-image: url(/mcp/_mcp-use/public/assets/textures/SW2GRAY.png);
+  background-image: url(./textures/SW2GRAY.png);
 }
 .switch[data-texture="SW1GRAY1"]:after {
-  background-image: url(/mcp/_mcp-use/public/assets/textures/SW2GRAY1.png);
+  background-image: url(./textures/SW2GRAY1.png);
 }
 .switch[data-texture="SW1METAL"]:after {
-  background-image: url(/mcp/_mcp-use/public/assets/textures/SW2METAL.png);
+  background-image: url(./textures/SW2METAL.png);
 }
 .switch[data-texture="SW1PIPE"]:after {
-  background-image: url(/mcp/_mcp-use/public/assets/textures/SW2PIPE.png);
+  background-image: url(./textures/SW2PIPE.png);
 }
 .switch[data-texture="SW1SLAD"]:after {
-  background-image: url(/mcp/_mcp-use/public/assets/textures/SW2SLAD.png);
+  background-image: url(./textures/SW2SLAD.png);
 }
 .switch[data-texture="SW1STARG"]:after {
-  background-image: url(/mcp/_mcp-use/public/assets/textures/SW2STARG.png);
+  background-image: url(./textures/SW2STARG.png);
 }
 .switch[data-texture="SW1STON1"]:after {
-  background-image: url(/mcp/_mcp-use/public/assets/textures/SW2STON1.png);
+  background-image: url(./textures/SW2STON1.png);
 }
 .switch[data-texture="SW1STON2"]:after {
-  background-image: url(/mcp/_mcp-use/public/assets/textures/SW2STON2.png);
+  background-image: url(./textures/SW2STON2.png);
 }
 .switch[data-texture="SW1STONE"]:after {
-  background-image: url(/mcp/_mcp-use/public/assets/textures/SW2STONE.png);
+  background-image: url(./textures/SW2STONE.png);
 }
 .switch[data-texture="SW1STRTN"]:after {
-  background-image: url(/mcp/_mcp-use/public/assets/textures/SW2STRTN.png);
+  background-image: url(./textures/SW2STRTN.png);
 }
 @keyframes sprite-cycle {
   0% {
@@ -744,37 +744,37 @@ body.css-frustum-culling .decoration {
   --w: 25;
   --h: 25;
   --frames: 4;
-  background-image: url(/mcp/_mcp-use/public/assets/sprites/sheets/SOUL.png);
+  background-image: url(./sprites/sheets/SOUL.png);
 }
 .sprite[data-type="health-bonus"] {
   --w: 14;
   --h: 18;
   --frames: 4;
-  background-image: url(/mcp/_mcp-use/public/assets/sprites/sheets/BON1.png);
+  background-image: url(./sprites/sheets/BON1.png);
 }
 .sprite[data-type="armor-bonus"] {
   --w: 16;
   --h: 15;
   --frames: 4;
-  background-image: url(/mcp/_mcp-use/public/assets/sprites/sheets/BON2.png);
+  background-image: url(./sprites/sheets/BON2.png);
 }
 .sprite[data-type="green-armor"] {
   --w: 31;
   --h: 17;
   --frames: 2;
-  background-image: url(/mcp/_mcp-use/public/assets/sprites/sheets/ARM1.png);
+  background-image: url(./sprites/sheets/ARM1.png);
 }
 .sprite[data-type="blue-armor"] {
   --w: 31;
   --h: 17;
   --frames: 2;
-  background-image: url(/mcp/_mcp-use/public/assets/sprites/sheets/ARM2.png);
+  background-image: url(./sprites/sheets/ARM2.png);
 }
 .sprite[data-type="invisibility"] {
   --w: 25;
   --h: 25;
   --frames: 4;
-  background-image: url(/mcp/_mcp-use/public/assets/sprites/sheets/PINS.png);
+  background-image: url(./sprites/sheets/PINS.png);
 }
 .projectile {
   rotate: y calc(var(--player-angle) * 57.2958deg);
@@ -811,7 +811,7 @@ body.css-frustum-culling .decoration {
       calc(var(--y) * -1px)
     )
     translate(-50%, -50%) rotateY(calc(var(--player-angle) * 57.2958deg));
-  background: url(/mcp/_mcp-use/public/assets/sprites/PUFF_SHEET.png) 0 0/60px
+  background: url(./sprites/PUFF_SHEET.png) 0 0/60px
     15px no-repeat;
   animation: 0.2s steps(3, end) forwards puff;
 }
@@ -839,17 +839,17 @@ body.css-frustum-culling .decoration {
 @keyframes fireball-explode {
   0%,
   33% {
-    background: url(/mcp/_mcp-use/public/assets/sprites/BAL1C0.png) 50% /
+    background: url(./sprites/BAL1C0.png) 50% /
       contain no-repeat;
   }
   33%,
   66% {
-    background: url(/mcp/_mcp-use/public/assets/sprites/BAL1D0.png) 50% /
+    background: url(./sprites/BAL1D0.png) 50% /
       contain no-repeat;
   }
   66%,
   to {
-    background: url(/mcp/_mcp-use/public/assets/sprites/BAL1E0.png) 50% /
+    background: url(./sprites/BAL1E0.png) 50% /
       contain no-repeat;
   }
 }
@@ -868,43 +868,43 @@ body.css-frustum-culling .decoration {
 }
 @keyframes teleport-fog {
   0% {
-    background: url(/mcp/_mcp-use/public/assets/sprites/TFOGA0.png)
+    background: url(./sprites/TFOGA0.png)
       bottom/contain no-repeat;
   }
   10% {
-    background: url(/mcp/_mcp-use/public/assets/sprites/TFOGB0.png)
+    background: url(./sprites/TFOGB0.png)
       bottom/contain no-repeat;
   }
   20% {
-    background: url(/mcp/_mcp-use/public/assets/sprites/TFOGC0.png)
+    background: url(./sprites/TFOGC0.png)
       bottom/contain no-repeat;
   }
   30% {
-    background: url(/mcp/_mcp-use/public/assets/sprites/TFOGD0.png)
+    background: url(./sprites/TFOGD0.png)
       bottom/contain no-repeat;
   }
   40% {
-    background: url(/mcp/_mcp-use/public/assets/sprites/TFOGE0.png)
+    background: url(./sprites/TFOGE0.png)
       bottom/contain no-repeat;
   }
   50% {
-    background: url(/mcp/_mcp-use/public/assets/sprites/TFOGF0.png)
+    background: url(./sprites/TFOGF0.png)
       bottom/contain no-repeat;
   }
   60% {
-    background: url(/mcp/_mcp-use/public/assets/sprites/TFOGG0.png)
+    background: url(./sprites/TFOGG0.png)
       bottom/contain no-repeat;
   }
   70% {
-    background: url(/mcp/_mcp-use/public/assets/sprites/TFOGH0.png)
+    background: url(./sprites/TFOGH0.png)
       bottom/contain no-repeat;
   }
   80% {
-    background: url(/mcp/_mcp-use/public/assets/sprites/TFOGI0.png)
+    background: url(./sprites/TFOGI0.png)
       bottom/contain no-repeat;
   }
   90% {
-    background: url(/mcp/_mcp-use/public/assets/sprites/TFOGJ0.png)
+    background: url(./sprites/TFOGJ0.png)
       bottom/contain no-repeat;
   }
   to {
@@ -917,7 +917,7 @@ body.css-frustum-culling .decoration {
   --cols: 5;
   --frames: 2;
   --rows: 7;
-  background-image: url(/mcp/_mcp-use/public/assets/sprites/sheets/POSS.png);
+  background-image: url(./sprites/sheets/POSS.png);
 }
 .sprite[data-type="shotgun-guy"] {
   --w: 52;
@@ -925,7 +925,7 @@ body.css-frustum-culling .decoration {
   --cols: 5;
   --frames: 2;
   --rows: 7;
-  background-image: url(/mcp/_mcp-use/public/assets/sprites/sheets/SPOS.png);
+  background-image: url(./sprites/sheets/SPOS.png);
 }
 .sprite[data-type="imp"] {
   --w: 58;
@@ -933,7 +933,7 @@ body.css-frustum-culling .decoration {
   --cols: 5;
   --frames: 2;
   --rows: 7;
-  background-image: url(/mcp/_mcp-use/public/assets/sprites/sheets/TROO.png);
+  background-image: url(./sprites/sheets/TROO.png);
 }
 .sprite[data-type="demon"] {
   --w: 64;
@@ -941,7 +941,7 @@ body.css-frustum-culling .decoration {
   --cols: 6;
   --frames: 2;
   --rows: 7;
-  background-image: url(/mcp/_mcp-use/public/assets/sprites/sheets/SARG.png);
+  background-image: url(./sprites/sheets/SARG.png);
 }
 .sprite[data-type="spectre"] {
   --w: 64;
@@ -951,7 +951,7 @@ body.css-frustum-culling .decoration {
   --rows: 7;
   filter: url(#fuzz);
   opacity: 0.35;
-  background-image: url(/mcp/_mcp-use/public/assets/sprites/sheets/SARG.png);
+  background-image: url(./sprites/sheets/SARG.png);
 }
 .sprite[data-type="spectre"][data-state="dead"] {
   filter: none;
@@ -962,7 +962,7 @@ body.css-frustum-culling .decoration {
   --cols: 7;
   --frames: 2;
   --rows: 7;
-  background-image: url(/mcp/_mcp-use/public/assets/sprites/sheets/BOSS.png);
+  background-image: url(./sprites/sheets/BOSS.png);
 }
 body.all-enemies-shadow .enemy .sprite {
   filter: url(#fuzz);
@@ -974,7 +974,7 @@ body.all-enemies-shadow .enemy .sprite {
   --cols: 5;
   --frames: 2;
   --rows: 2;
-  background-image: url(/mcp/_mcp-use/public/assets/sprites/sheets/BAR1.png);
+  background-image: url(./sprites/sheets/BAR1.png);
 }
 .barrel .sprite[data-state="dead"] {
   animation-name: sprite-hide;
@@ -983,7 +983,7 @@ body.all-enemies-shadow .enemy .sprite {
   --w: 26;
   --h: 97;
   --frames: 4;
-  background-image: url(/mcp/_mcp-use/public/assets/sprites/sheets/TRED.png);
+  background-image: url(./sprites/sheets/TRED.png);
 }
 #renderer.dead #viewport {
   filter: sepia(0.5) saturate(2) hue-rotate(-20deg);
@@ -1121,25 +1121,25 @@ body:not(.spectator) #renderer.moving #weapon:not(.firing):not(.switching) {
   --w: 147;
   --h: 76;
   --frames: 4;
-  background-image: url(/mcp/_mcp-use/public/assets/weapons/FIST.png);
+  background-image: url(./weapons/FIST.png);
 }
 #weapon[data-type="PISTOL"] {
   --w: 79;
   --h: 103;
   --frames: 5;
-  background-image: url(/mcp/_mcp-use/public/assets/weapons/PISTOL.png);
+  background-image: url(./weapons/PISTOL.png);
 }
 #weapon[data-type="SHOTGUN"] {
   --w: 119;
   --h: 151;
   --frames: 6;
-  background-image: url(/mcp/_mcp-use/public/assets/weapons/SHOTGUN.png);
+  background-image: url(./weapons/SHOTGUN.png);
 }
 #weapon[data-type="CHAINGUN"] {
   --w: 114;
   --h: 103;
   --frames: 3;
-  background-image: url(/mcp/_mcp-use/public/assets/weapons/CHAINGUN.png);
+  background-image: url(./weapons/CHAINGUN.png);
 }
 #weapon[data-type="CHAINGUN"].firing {
   animation: 0.3s steps(2, end) infinite chaingun-fire;
@@ -1156,13 +1156,13 @@ body:not(.spectator) #renderer.moving #weapon:not(.firing):not(.switching) {
   --w: 105;
   --h: 119;
   --frames: 5;
-  background-image: url(/mcp/_mcp-use/public/assets/weapons/ROCKET.png);
+  background-image: url(./weapons/ROCKET.png);
 }
 #weapon[data-type="CHAINSAW"] {
   --w: 154;
   --h: 89;
   --frames: 4;
-  background-image: url(/mcp/_mcp-use/public/assets/weapons/CHAINSAW.png);
+  background-image: url(./weapons/CHAINSAW.png);
 }
 #hud {
   --scale: 3;
@@ -1196,7 +1196,7 @@ body:not(.spectator) #renderer.moving #weapon:not(.firing):not(.switching) {
 }
 .hud-section {
   height: calc(32px * var(--scale));
-  background: url(/mcp/_mcp-use/public/assets/hud/STBAR.png) no-repeat;
+  background: url(./hud/STBAR.png) no-repeat;
   background-size: calc(320px * var(--scale)) calc(32px * var(--scale));
   position: relative;
   overflow: hidden;
@@ -1248,7 +1248,7 @@ body:not(.spectator) #renderer.moving #weapon:not(.firing):not(.switching) {
   padding: 0 var(--glyph);
   width: var(--glyph);
   height: calc(16px * var(--scale));
-  background: url(/mcp/_mcp-use/public/assets/hud/DIGITS_SHEET.png) no-repeat;
+  background: url(./hud/DIGITS_SHEET.png) no-repeat;
   background-size: calc(var(--glyph) * 12) calc(16px * var(--scale));
   background-origin: content-box;
   background-clip: content-box;
@@ -1262,7 +1262,7 @@ body:not(.spectator) #renderer.moving #weapon:not(.firing):not(.switching) {
   content: "";
   width: var(--glyph);
   height: calc(16px * var(--scale));
-  background: url(/mcp/_mcp-use/public/assets/hud/DIGITS_SHEET.png) no-repeat;
+  background: url(./hud/DIGITS_SHEET.png) no-repeat;
   background-size: calc(var(--glyph) * 12) calc(16px * var(--scale));
   image-rendering: pixelated;
   position: absolute;
@@ -1285,7 +1285,7 @@ body:not(.spectator) #renderer.moving #weapon:not(.firing):not(.switching) {
   right: calc(-14px * var(--scale));
   width: calc(14px * var(--scale));
   height: calc(16px * var(--scale));
-  background: url(/mcp/_mcp-use/public/assets/hud/DIGITS_SHEET.png) no-repeat;
+  background: url(./hud/DIGITS_SHEET.png) no-repeat;
   background-size: calc(168px * var(--scale)) calc(16px * var(--scale));
   background-position-x: calc(-10 * 14px * var(--scale));
   image-rendering: pixelated;
@@ -1310,8 +1310,8 @@ body:not(.spectator) #renderer.moving #weapon:not(.firing):not(.switching) {
 }
 #hud-face {
   background-image:
-    url(/mcp/_mcp-use/public/assets/hud/STFB0.png),
-    url(/mcp/_mcp-use/public/assets/hud/STBAR.png);
+    url(./hud/STFB0.png),
+    url(./hud/STBAR.png);
   background-size:
     calc(36px * var(--scale)) calc(31px * var(--scale)),
     calc(320px * var(--scale)) calc(32px * var(--scale));
@@ -1326,7 +1326,7 @@ body:not(.spectator) #renderer.moving #weapon:not(.firing):not(.switching) {
   top: calc(1px * var(--scale));
   width: calc(24px * var(--scale));
   height: calc(31px * var(--scale));
-  background: url(/mcp/_mcp-use/public/assets/hud/FACE_SHEET.png) no-repeat;
+  background: url(./hud/FACE_SHEET.png) no-repeat;
   background-size: calc(72px * var(--scale)) calc(155px * var(--scale));
   background-position-y: calc(var(--face-row, 0) * -31px * var(--scale));
   image-rendering: pixelated;
@@ -1368,13 +1368,13 @@ body:not(.spectator) #renderer.moving #weapon:not(.firing):not(.switching) {
   background-size: contain;
 }
 .key-blue {
-  background-image: url(/mcp/_mcp-use/public/assets/hud/STKEYS0.png);
+  background-image: url(./hud/STKEYS0.png);
 }
 .key-yellow {
-  background-image: url(/mcp/_mcp-use/public/assets/hud/STKEYS1.png);
+  background-image: url(./hud/STKEYS1.png);
 }
 .key-red {
-  background-image: url(/mcp/_mcp-use/public/assets/hud/STKEYS2.png);
+  background-image: url(./hud/STKEYS2.png);
 }
 #renderer.has-blue-key .key-blue,
 #renderer.has-yellow-key .key-yellow,
@@ -1383,8 +1383,8 @@ body:not(.spectator) #renderer.moving #weapon:not(.firing):not(.switching) {
 }
 #hud-arms {
   background-image:
-    url(/mcp/_mcp-use/public/assets/hud/STARMS.png),
-    url(/mcp/_mcp-use/public/assets/hud/STBAR.png);
+    url(./hud/STARMS.png),
+    url(./hud/STBAR.png);
   background-size:
     calc(40px * var(--scale)) calc(32px * var(--scale)),
     calc(320px * var(--scale)) calc(32px * var(--scale));
@@ -1425,40 +1425,40 @@ body:not(.spectator) #renderer.moving #weapon:not(.firing):not(.switching) {
   top: calc(14px * var(--scale));
 }
 .slot[data-slot="2"] {
-  background-image: url(/mcp/_mcp-use/public/assets/hud/STGNUM2.png);
+  background-image: url(./hud/STGNUM2.png);
 }
 .slot[data-slot="3"] {
-  background-image: url(/mcp/_mcp-use/public/assets/hud/STGNUM3.png);
+  background-image: url(./hud/STGNUM3.png);
 }
 .slot[data-slot="4"] {
-  background-image: url(/mcp/_mcp-use/public/assets/hud/STGNUM4.png);
+  background-image: url(./hud/STGNUM4.png);
 }
 .slot[data-slot="5"] {
-  background-image: url(/mcp/_mcp-use/public/assets/hud/STGNUM5.png);
+  background-image: url(./hud/STGNUM5.png);
 }
 .slot[data-slot="6"] {
-  background-image: url(/mcp/_mcp-use/public/assets/hud/STGNUM6.png);
+  background-image: url(./hud/STGNUM6.png);
 }
 .slot[data-slot="7"] {
-  background-image: url(/mcp/_mcp-use/public/assets/hud/STGNUM7.png);
+  background-image: url(./hud/STGNUM7.png);
 }
 #renderer.has-weapon-2 .slot[data-slot="2"] {
-  background-image: url(/mcp/_mcp-use/public/assets/hud/STYSNUM2.png);
+  background-image: url(./hud/STYSNUM2.png);
 }
 #renderer.has-weapon-3 .slot[data-slot="3"] {
-  background-image: url(/mcp/_mcp-use/public/assets/hud/STYSNUM3.png);
+  background-image: url(./hud/STYSNUM3.png);
 }
 #renderer.has-weapon-4 .slot[data-slot="4"] {
-  background-image: url(/mcp/_mcp-use/public/assets/hud/STYSNUM4.png);
+  background-image: url(./hud/STYSNUM4.png);
 }
 #renderer.has-weapon-5 .slot[data-slot="5"] {
-  background-image: url(/mcp/_mcp-use/public/assets/hud/STYSNUM5.png);
+  background-image: url(./hud/STYSNUM5.png);
 }
 #renderer.has-weapon-6 .slot[data-slot="6"] {
-  background-image: url(/mcp/_mcp-use/public/assets/hud/STYSNUM6.png);
+  background-image: url(./hud/STYSNUM6.png);
 }
 #renderer.has-weapon-7 .slot[data-slot="7"] {
-  background-image: url(/mcp/_mcp-use/public/assets/hud/STYSNUM7.png);
+  background-image: url(./hud/STYSNUM7.png);
 }
 #hud-ammo-types {
   position: relative;
@@ -1533,7 +1533,7 @@ body:not(.spectator) #renderer.moving #weapon:not(.firing):not(.switching) {
   padding: 0 var(--glyph);
   width: var(--glyph);
   height: calc(6px * var(--scale));
-  background: url(/mcp/_mcp-use/public/assets/hud/SMALL_DIGITS_SHEET.png)
+  background: url(./hud/SMALL_DIGITS_SHEET.png)
     no-repeat;
   background-size: calc(var(--glyph) * 10) calc(6px * var(--scale));
   background-origin: content-box;
@@ -1547,7 +1547,7 @@ body:not(.spectator) #renderer.moving #weapon:not(.firing):not(.switching) {
   content: "";
   width: var(--glyph);
   height: calc(6px * var(--scale));
-  background: url(/mcp/_mcp-use/public/assets/hud/SMALL_DIGITS_SHEET.png)
+  background: url(./hud/SMALL_DIGITS_SHEET.png)
     no-repeat;
   background-size: calc(var(--glyph) * 10) calc(6px * var(--scale));
   image-rendering: pixelated;
@@ -1642,7 +1642,7 @@ body:not(.spectator) #renderer.moving #weapon:not(.firing):not(.switching) {
   height: 40px;
   image-rendering: pixelated;
   cursor: pointer;
-  background: url(/mcp/_mcp-use/public/assets/menu/M_DOOM.png) 50% / contain
+  background: url(./menu/M_DOOM.png) 50% / contain
     no-repeat;
   border: none;
   align-items: flex-end;
@@ -1755,7 +1755,7 @@ body:not(.spectator) #renderer.moving #weapon:not(.firing):not(.switching) {
   opacity: 1;
 }
 .menu-level .level-digit {
-  background: url(/mcp/_mcp-use/public/assets/hud/DIGITS_SHEET.png) 0 0/252px
+  background: url(./hud/DIGITS_SHEET.png) 0 0/252px
     24px no-repeat;
   background-position-x: calc(var(--level, 0) * -14px * 1.5);
   width: 21px;
@@ -1786,7 +1786,7 @@ body:not(.spectator) #renderer.moving #weapon:not(.firing):not(.switching) {
   width: 20px;
   height: 19px;
   image-rendering: pixelated;
-  background: url(/mcp/_mcp-use/public/assets/menu/M_SKULL1.png) 50% / contain
+  background: url(./menu/M_SKULL1.png) 50% / contain
     no-repeat;
   flex-shrink: 0;
 }
@@ -1951,7 +1951,7 @@ body.spectator #player > .marker {
   --rows: 5;
   animation-play-state: paused;
   animation-duration: calc(var(--frames) * 0.15s);
-  background-image: url(/mcp/_mcp-use/public/assets/sprites/sheets/PLAY.png);
+  background-image: url(./sprites/sheets/PLAY.png);
   transition: opacity 0.3s;
   bottom: 0;
   backface-visibility: visible !important;

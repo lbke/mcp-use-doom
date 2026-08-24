@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       mcp-use:
-        specifier: 2.0.0-beta.65
-        version: 2.0.0-beta.65(@types/node@22.20.1)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(zod@4.4.3)
+        specifier: 2.0.0-beta.66
+        version: 2.0.0-beta.66(@types/node@22.20.1)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(zod@4.4.3)
       react:
         specifier: ^19.2.7
         version: 19.2.8
@@ -94,8 +94,8 @@ packages:
       react-dom:
         optional: true
 
-  '@mcp-use/inspector@20.0.0-beta.57':
-    resolution: {integrity: sha512-9tOH4YQkBM0Gz7+Xj5GbPtBaR3l+dCJ9PTtxvZZGJhpHNwk63STMLy0U0bNF8NYj4+uzVRFCaNC5Lo0ewsowsg==}
+  '@mcp-use/inspector@20.0.0-beta.58':
+    resolution: {integrity: sha512-JSwNYgGb1SMJxEdFMw6JdknRmtIi/O5a9yZwGLb7P44Bc4v+ydq1C9OiyRKlvVD2QGdgWfqne7v5k1Ka/ngtAw==}
     engines: {node: '>=22.22.2'}
     hasBin: true
     peerDependencies:
@@ -107,7 +107,7 @@ packages:
       express: ^4.21.2 || ^5.0.0
       lucide-react: ^0.562.0
       markdown-to-jsx: ^9.7.4
-      mcp-use: 2.0.0-beta.65
+      mcp-use: 2.0.0-beta.66
       motion: ^12.34.2
       react: ^18.0.0 || ^19.0.0
       react-dom: ^18.0.0 || ^19.0.0
@@ -713,8 +713,8 @@ packages:
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
 
-  mcp-use@2.0.0-beta.65:
-    resolution: {integrity: sha512-KfKbKxiSoURmuwi2rx4zf6K3+lOHZ+/EvaQWB7PuSyT1rjklxYb8YHeYVURh5LIuDRc+GeKCpVU1hJTDj2X4tA==}
+  mcp-use@2.0.0-beta.66:
+    resolution: {integrity: sha512-ljF76xqQfJ/p1WlBVV7iwz/1LMR25DHxljvxlldOPIcVdbmbCX9OLLuf+oV2xyHdkFsFM+xpSz56gFxUZri/Dw==}
     engines: {node: '>=22.22.2'}
     hasBin: true
     peerDependencies:
@@ -892,14 +892,14 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@mcp-use/cli@4.0.0-beta.15(@mcp-use/inspector@20.0.0-beta.57(mcp-use@2.0.0-beta.65(@types/node@22.20.1)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(zod@4.4.3))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@types/node@22.20.1)(jiti@2.7.0)':
+  '@mcp-use/cli@4.0.0-beta.15(@mcp-use/inspector@20.0.0-beta.58(mcp-use@2.0.0-beta.66(@types/node@22.20.1)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(zod@4.4.3))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@types/node@22.20.1)(jiti@2.7.0)':
     dependencies:
       '@tailwindcss/vite': 4.3.3(vite@8.1.5(@types/node@22.20.1)(jiti@2.7.0))
       '@vitejs/plugin-react': 6.0.4(vite@8.1.5(@types/node@22.20.1)(jiti@2.7.0))
       tailwindcss: 4.3.3
       vite: 8.1.5(@types/node@22.20.1)(jiti@2.7.0)
     optionalDependencies:
-      '@mcp-use/inspector': 20.0.0-beta.57(mcp-use@2.0.0-beta.65(@types/node@22.20.1)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(zod@4.4.3))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@mcp-use/inspector': 20.0.0-beta.58(mcp-use@2.0.0-beta.66(@types/node@22.20.1)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(zod@4.4.3))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
     transitivePeerDependencies:
       - '@rolldown/plugin-babel'
       - '@types/node'
@@ -927,9 +927,9 @@ snapshots:
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
 
-  '@mcp-use/inspector@20.0.0-beta.57(mcp-use@2.0.0-beta.65(@types/node@22.20.1)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(zod@4.4.3))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
+  '@mcp-use/inspector@20.0.0-beta.58(mcp-use@2.0.0-beta.66(@types/node@22.20.1)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(zod@4.4.3))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
-      mcp-use: 2.0.0-beta.65(@types/node@22.20.1)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(zod@4.4.3)
+      mcp-use: 2.0.0-beta.66(@types/node@22.20.1)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(zod@4.4.3)
     optionalDependencies:
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
@@ -1305,10 +1305,10 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  mcp-use@2.0.0-beta.65(@types/node@22.20.1)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(zod@4.4.3):
+  mcp-use@2.0.0-beta.66(@types/node@22.20.1)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(zod@4.4.3):
     dependencies:
-      '@mcp-use/cli': 4.0.0-beta.15(@mcp-use/inspector@20.0.0-beta.57(mcp-use@2.0.0-beta.65(@types/node@22.20.1)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(zod@4.4.3))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@types/node@22.20.1)(jiti@2.7.0)
-      '@mcp-use/inspector': 20.0.0-beta.57(mcp-use@2.0.0-beta.65(@types/node@22.20.1)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(zod@4.4.3))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      '@mcp-use/cli': 4.0.0-beta.15(@mcp-use/inspector@20.0.0-beta.58(mcp-use@2.0.0-beta.66(@types/node@22.20.1)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(zod@4.4.3))(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(@types/node@22.20.1)(jiti@2.7.0)
+      '@mcp-use/inspector': 20.0.0-beta.58(mcp-use@2.0.0-beta.66(@types/node@22.20.1)(jiti@2.7.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(zod@4.4.3))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@modelcontextprotocol/client': 2.0.0
       '@modelcontextprotocol/core': 2.0.0
       '@modelcontextprotocol/ext-apps': '@mcp-use/ext-apps@1.7.4-pr720.1(@modelcontextprotocol/client@2.0.0)(@modelcontextprotocol/core@2.0.0)(@modelcontextprotocol/server@2.0.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(zod@4.4.3)'

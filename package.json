@@ -27,7 +27,7 @@
     "typecheck": "mcp-use typecheck"
   },
   "dependencies": {
-    "mcp-use": "2.0.0-beta.65",
+    "mcp-use": "2.0.0-beta.66",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "zod": "^4.4.3"
