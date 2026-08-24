@@ -1,6 +1,20 @@
 # MCP Server built with mcp-use
 
+Can Doom run in Claude? The answer is yes.
+
+- The iframe version doesn't work (blocked by Claude host)
+- The CSS version does render weirdly (I mean, it's DOOM in CSS in the first place, I didn't expect it to work perfectly)
+- The [WASM version](https://github.com/cloudflare/doom-wasm) DOES work!
+
+**Important:** this project requires the "doom1.wad" file to be present at the exact location `public/doom-wasm/doom1.wad`. The .wad file is shareware and cannot be distributed. You need to obtain the file by buying classic Doom on Steam or GoG.
+
+As a replacement, it includes [freedoom1.wad](https://freedoom.github.io/downloads.html) which is a free and open-source alternative to the original Doom shareware.
+
+## mcp-use
+
 This is an MCP server project bootstrapped with [`create-mcp-use-app`](https://mcp-use.com/docs/typescript/getting-started/quickstart).
+
+Special thanks to [Andrew Khadder](https://github.com/khandrew1) for fixing the asset loading issue.
 
 ## Getting Started
 

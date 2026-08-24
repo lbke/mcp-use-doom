@@ -15,18 +15,11 @@ import "./view.css";
 export default function McpApp() {
   const publicBaseUrl = getPublicBaseUrl();
 
-  // useToolContext — tool lifecycle (pending / error / result)
-  const view = useToolContext<"doom-wasm">();
-  // useHostContext — locale, timezone, platform, capabilities
   const { hostCapabilities, platform, displayMode, locale, timeZone } =
     useHostContext();
   const theme = useViewTheme();
   // useDisplayMode — request pip / fullscreen / inline
   const { availableDisplayModes, requestDisplayMode } = useDisplayMode();
-  // useOpenExternal — open URLs via the host
-  const openExternal = useOpenExternal();
-  // useSendFollowUp — send a prompt back to the host
-  const sendFollowUp = useSendFollowUp();
 
   useEffect(() => {
     if (!publicBaseUrl) {
@@ -60,6 +53,8 @@ export default function McpApp() {
 
     canvas.addEventListener("webglcontextlost", onWebglContextLost, false);
 
+    const FREE = true;
+    const doomFile = FREE ? "freedoom1.wad" : "doom1.wad";
     (window as any).Module = {
       noInitialRun: true,
       locateFile: (path: string) => `${doomBaseUrl}/${path}`,
@@ -67,7 +62,7 @@ export default function McpApp() {
         (window as any).Module.FS.createPreloadedFile(
           "",
           "doom1.wad",
-          `${doomBaseUrl}/doom1.wad`,
+          `${doomBaseUrl}/${doomFile}`,
           true,
           true,
         );
@@ -128,6 +123,8 @@ export default function McpApp() {
             event.preventDefault();
           }}
           tabIndex={-1}
+          width={800}
+          height={600}
         ></canvas>
       </div>
     </>

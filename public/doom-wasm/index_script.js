@@ -6,7 +6,7 @@ var Module = {
     },
     noInitialRun: true,
     preRun: () => {
-        Module.FS.createPreloadedFile("", "doom1.wad", "doom1.wad", true, true);
+        Module.FS.createPreloadedFile("", "doom1.wad", "freedoom1.wad", true, true);
         Module.FS.createPreloadedFile("", "default.cfg", "default.cfg", true, true);
     },
     printErr: function (text) {
