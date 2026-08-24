@@ -6,9 +6,11 @@ Can Doom run in Claude? The answer is yes.
 - The CSS version does render weirdly (I mean, it's DOOM in CSS in the first place, I didn't expect it to work perfectly)
 - The [WASM version](https://github.com/cloudflare/doom-wasm) DOES work!
 
-**Important:** this project requires the "doom1.wad" file to be present at the exact location `public/doom-wasm/doom1.wad`. The .wad file is shareware and cannot be distributed. You need to obtain the file by buying classic Doom on Steam or GoG.
+The project includes [freedoom1.wad](https://freedoom.github.io/downloads.html), which is a free and open-source alternative to the original Doom shareware.
 
-As a replacement, it includes [freedoom1.wad](https://freedoom.github.io/downloads.html) which is a free and open-source alternative to the original Doom shareware.
+If you want the real Doom, this project requires the "doom1.wad" file to be present at the exact location `public/doom-wasm/doom1.wad`. The .wad file is shareware and cannot be distributed. You need to obtain the file by buying classic Doom on Steam or GoG.
+
+🇫🇷 Situé en France ? Retrouvez ma formation [« Créer une application MCP pour l'IA agentique »](https://www.lbke.fr/formations/ia/mcp) pour les développeurs et développeuses web.
 
 ## mcp-use
 
